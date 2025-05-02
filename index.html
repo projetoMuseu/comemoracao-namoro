@@ -691,7 +691,7 @@
                 <div class="gallery-caption">Salvação</div>
             </div>
             <div class="gallery-item" data-img="/assets/images/4.jpeg" data-caption="Hoje eu lembrei de nós, você é a minha certeza, a minha promessa, meu presente de Deus.">
-                <img src="/assets/images/4.jpeg" alt="Nosso presente">
+                <img src="/assets/images/5.jpeg" alt="Nosso presente">
                 <div class="gallery-caption">Presente de Deus</div>
             </div>
         </div>
@@ -1140,6 +1140,10 @@
                         garyMessage.classList.remove('show');
                         derickTouched = true;
                         garyTouched = false;
+
+                        // Adicionar instrução para clicar novamente
+                        derickMessage.innerHTML += "<br><strong>👆 Toque novamente para ver o resultado!</strong>";
+
                         setTimeout(() => {
                             if (!derick.contains(document.activeElement)) {
                                 derickMessage.classList.remove('show');
@@ -1163,6 +1167,10 @@
                         derickMessage.classList.remove('show');
                         garyTouched = true;
                         derickTouched = false;
+
+                        // Adicionar instrução para clicar novamente
+                        garyMessage.innerHTML += "<br><strong>👆 Toque novamente para ver o resultado!</strong>";
+
                         setTimeout(() => {
                             if (!gary.contains(document.activeElement)) {
                                 garyMessage.classList.remove('show');
