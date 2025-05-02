@@ -1129,57 +1129,61 @@
             
             // Configurar interações diferentes baseadas no tipo de dispositivo
             if (isTouchDevice) {
+                // Guarda o conteúdo original das mensagens
+                const originalDerickMessage = derickMessage.innerHTML;
+                const originalGaryMessage = garyMessage.innerHTML;
+
                 // Para dispositivos touch, mostrar a mensagem no primeiro toque e a personalidade no segundo
                 let derickTouched = false;
                 let garyTouched = false;
-                
+
                 derick.addEventListener('click', function() {
                     if (!derickTouched) {
                         // Primeiro toque: mostrar mensagem
+                        derickMessage.innerHTML = originalDerickMessage + "<br><strong>👆 Toque novamente para ver o resultado!</strong>";
                         derickMessage.classList.add('show');
                         garyMessage.classList.remove('show');
                         derickTouched = true;
                         garyTouched = false;
-
-                        // Adicionar instrução para clicar novamente
-                        derickMessage.innerHTML += "<br><strong>👆 Toque novamente para ver o resultado!</strong>";
-
+                        
                         setTimeout(() => {
                             if (!derick.contains(document.activeElement)) {
                                 derickMessage.classList.remove('show');
+                                derickMessage.innerHTML = originalDerickMessage; // Restaura o conteúdo original
                                 derickTouched = false;
                             }
                         }, 3000);
                     } else {
                         // Segundo toque: mostrar personalidade
                         derickMessage.classList.remove('show');
+                        derickMessage.innerHTML = originalDerickMessage; // Restaura o conteúdo original
                         derick.classList.add('selected');
                         gary.classList.remove('selected');
                         showPersonality('derick');
                         derickTouched = false;
                     }
                 });
-                
+
                 gary.addEventListener('click', function() {
                     if (!garyTouched) {
                         // Primeiro toque: mostrar mensagem
+                        garyMessage.innerHTML = originalGaryMessage + "<br><strong>👆 Toque novamente para ver o resultado!</strong>";
                         garyMessage.classList.add('show');
                         derickMessage.classList.remove('show');
                         garyTouched = true;
                         derickTouched = false;
-
-                        // Adicionar instrução para clicar novamente
-                        garyMessage.innerHTML += "<br><strong>👆 Toque novamente para ver o resultado!</strong>";
-
+                        
                         setTimeout(() => {
                             if (!gary.contains(document.activeElement)) {
                                 garyMessage.classList.remove('show');
+                                garyMessage.innerHTML = originalGaryMessage; // Restaura o conteúdo original
                                 garyTouched = false;
                             }
                         }, 3000);
                     } else {
                         // Segundo toque: mostrar personalidade
                         garyMessage.classList.remove('show');
+                        garyMessage.innerHTML = originalGaryMessage; // Restaura o conteúdo original
                         gary.classList.add('selected');
                         derick.classList.remove('selected');
                         showPersonality('gary');
