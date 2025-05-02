@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Meu Amor, Daniel ❤️ - 8 Meses Juntos</title>
+    <style>
+        /* Reset e Estilos Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent; /* Remove o highlight azul no toque em dispositivos móveis */
+            outline: none; /* Remove outline em todos os elementos */
+        }
+
+        :root {
+            --primary-color: #ff3e6c;
+            --secondary-color: #ff7a9c;
+            --background-color: #fff1f5;
+            --dark-color: #1a1a1a;
+            --light-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        /* Estilos do Cabeçalho */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease;
+        }
+
+        .header-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            color: var(--dark-color);
+            animation: fadeIn 2.5s ease;
+        }
+
+        .header-date {
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+            color: var(--secondary-color);
+            animation: fadeIn 3s ease;
+        }
+
+        #headerHeart {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite alternate;
+            filter: drop-shadow(0 0 10px rgba(255, 62, 108, 0.3));
+        }
+
+        .small-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .small-heart {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--secondary-color);
+            opacity: 0.6;
+            border-radius: 50%;
+            animation: floatHeart 15s linear infinite;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .scroll-down svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--primary-color);
+        }
+
+        /* Estilos das Seções */
+        section {
+            padding: 3rem 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto;
+        }
+
+        /* Seção da Mensagem */
+        .message-section {
+            background-color: var(--light-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 62, 108, 0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease;
+        }
+
+        /* Seção de Comemoração */
+        .celebration {
+            background-color: var(--light-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 62, 108, 0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .celebration::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: var(--secondary-color);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .celebration::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary-color);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .celebration h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+            color: var(--dark-color);
+        }
+
+        /* Seção da Galeria */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            height: 250px;
+        }
+
+        .gallery-item:hover, .gallery-item:active {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img, .gallery-item:active img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--light-color);
+            padding: 0.8rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption, .gallery-item:active .gallery-caption, .gallery-item.touch-active .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Seção de Vídeo - MODIFICADA para aspect ratio correto */
+        .video-container {
+            max-width: 500px; /* Ajustado para melhor proporção em vídeos verticais */
+            margin: 0 auto;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            /* Ajuste para proporcionar a relação de aspecto correta */
+            aspect-ratio: 9/16; /* Proporção vertical invertida de 16:9 para 9:16 */
+            background-color: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover; /* Mudado de 'contain' para 'cover' para preencher o container */
+        }
+
+        .video-message {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 15px auto;
+        }
+
+        /* Seção de Personagens Especiais */
+        .special-characters {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            padding: 3rem 0;
+        }
+
+        .character {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 300px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .character img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: contain;
+            background-color: #fff;
+            margin-bottom: 1rem;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .character:hover img, .character:active img, .character.touch-active img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .character h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .character p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Balões de Mensagem para Personagens - adaptado para mobile */
+        .character-message {
+            position: absolute;
+            top: -80px;
+            background-color: var(--light-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 10px 15px;
+            width: 250px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            z-index: 5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .character-message::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--primary-color);
+        }
+
+        .character-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .character.selected img {
+            animation: characterPulse 0.8s ease;
+        }
+
+        /* Personagem Selecionado */
+        .character-selection {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.5s, transform 0.5s;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .character-selection.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .character-selection h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-heart {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary-color);
+            margin: 0 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* Player de Música */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .music-player:hover, .music-player:active {
+            transform: scale(1.1);
+        }
+
+        .music-player svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary-color);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 5px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: var(--light-color);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Confetti para seleção de personagem */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            z-index: 99;
+            animation: confettiFall 3s ease-in-out forwards;
+            pointer-events: none;
+        }
+
+        /* Animações */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes characterPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2) rotate(5deg);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-30px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsivo */
+        @media (min-width: 768px) {
+            .header-title {
+                font-size: 3.5rem;
+            }
+
+            .header-subtitle {
+                font-size: 2rem;
+            }
+
+            .special-characters {
+                flex-direction: row;
+                justify-content: center;
+                gap: 5rem;
+            }
+        }
+
+        /* Estilos específicos para dispositivos móveis */
+        @media (max-width: 767px) {
+            .video-container {
+                aspect-ratio: 9/16; /* Manter a proporção correta */
+                max-width: 300px; /* Container mais estreito em dispositivos móveis */
+            }
+            
+            .character-message {
+                width: 200px;
+                top: -70px;
+                font-size: 0.9rem;
+            }
+            
+            .celebration h3 {
+                font-size: 1.5rem;
+            }
+            
+            .countdown {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Player de Música -->
+    <div class="music-player" id="musicToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="playerIcon">
+            <path d="M8 5v14l11-7z"/>
+        </svg>
+    </div>
+    <audio id="bgMusic" loop>
+        <source src="/assets/audios/lembrei-de-nós.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Cabeçalho -->
+    <header id="home">
+        <div class="small-hearts"></div>
+        
+        <svg id="headerHeart" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 90C50 90 85 65 85 40C85 26 74 15 60 15C55 15 50 17 46 20C42 17 37 15 32 15C18 15 7 26 7 40C7 65 50 90 50 90Z" 
+                stroke="#ff3e6c" stroke-width="3" fill="#ff3e6c" fill-opacity="0.5"/>
+        </svg>
+        
+        <h1 class="header-title">Daniel & Lucy</h1>
+        <h2 class="header-subtitle">Uma História de Amor</h2>
+        <p class="header-date">8 Meses Juntos ❤️</p>
+        
+        <div class="scroll-down" id="scrollDown">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Seção de Comemoração -->
+    <section id="celebration" class="celebration" style="margin-bottom: 4rem;">
+        <h3>Feliz 8 Meses de Namoro!</h3>
+        <p>Dia 06/05/2025 comemoramos 8 meses juntos. Esta página é meu presente especial para você, meu amor!</p>
+        <div class="countdown" id="countdown">
+            Contagem regressiva: <span id="days">0</span> dias, <span id="hours">0</span> horas, <span id="minutes">0</span> minutos, <span id="seconds">0</span> segundos
+        </div>
+        <div id="anniversary-celebration" style="display: none; margin-top: 1.5rem;">
+            <p style="font-size: 1.3rem; color: var(--primary-color); font-weight: bold;">♥ FELIZ 8 MESES DE AMOR! ♥</p>
+            <p style="font-style: italic;">Obrigada por cada momento ao seu lado, meu amor!</p>
+        </div>
+    </section>
+
+    <!-- Seção da Mensagem -->
+    <section id="message" class="message-section">
+        <h2 class="section-title">Minha Carta de Amor</h2>
+        <div class="message-text">
+            <p>Meu querido Daniel,</p>
+            <br>
+            <p>Cada dia ao seu lado é uma aventura maravilhosa. Seu sorriso ilumina meu mundo e seu amor me dá força. Desde o momento em que nos conhecemos, soube que meu coração havia encontrado seu lar.</p>
+            <br>
+            <p>Este pequeno cantinho da internet é dedicado a você - para celebrar nosso amor e as inúmeras memórias que criamos juntos. Dos nossos momentos mais íntimos aos nossos sonhos para o futuro, este é um testemunho da nossa jornada.</p>
+            <br>
+            <p>Obrigada por ser minha rocha, meu melhor amigo e minha alma gêmea. Eu te amo mais do que as palavras podem expressar.</p>
+            <br>
+            <p>Para sempre sua,</p>
+            <p>Lucy ❤️</p>
+        </div>
+    </section>
+
+    <!-- Seção da Galeria -->
+    <section id="gallery">
+        <h2 class="section-title">Nossos Momentos Lindos</h2>
+        <div class="gallery-container">
+            <div class="gallery-item" data-img="/assets/images/1.jpeg" data-caption="Você é a doçura dos meus dias">
+                <img src="/assets/images/1.jpeg" alt="Momentos especiais">
+                <div class="gallery-caption">Doçura dos meus dias</div>
+            </div>
+            <div class="gallery-item" data-img="/assets/images/2.jpeg" data-caption="E aconteceu, o pedido veio, desde então posso dizer que conheci o amor de verdade, onde há respeito, amor, comunicação e duas pessoas dispostas a fazer dar certo ❤️">
+                <img src="/assets/images/2.jpeg" alt="Nosso pedido">
+                <div class="gallery-caption">Amor verdadeiro</div>
+            </div>
+            <div class="gallery-item" data-img="/assets/images/3.jpeg" data-caption="E sabe o que é melhor de tudo isso? É que temos Deus como pilar do nosso relacionamento.">
+                <img src="/assets/images/3.jpeg" alt="Nossa fé">
+                <div class="gallery-caption">Nosso pilar</div>
+            </div>
+            <div class="gallery-item" data-img="/assets/images/4.jpeg" data-caption="Eu acredito sim, que Deus usa pessoas para nos salvar.">
+                <img src="/assets/images/4.jpeg" alt="Nossa jornada">
+                <div class="gallery-caption">Salvação</div>
+            </div>
+            <div class="gallery-item" data-img="/assets/images/4.jpeg" data-caption="Hoje eu lembrei de nós, você é a minha certeza, a minha promessa, meu presente de Deus.">
+                <img src="/assets/images/4.jpeg" alt="Nosso presente">
+                <div class="gallery-caption">Presente de Deus</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Vídeo -->
+    <section id="video">
+        <h2 class="section-title">Nossos Momentos Especiais</h2>
+        <div class="video-container">
+            <!-- Vídeo 1 -->
+            <video controls width="100%" height="100%" class="media-element">
+                <source src="/assets/videos/primeiro-video.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+        <div class="video-message">
+            <p>Nosso primeiro vídeo juntos, mal sabia eu que estaria dançando com o amor da minha vida ❤️</p>
+        </div>
+        
+        <div class="video-container" style="margin-top: 30px;">
+            <!-- Vídeo 2 -->
+            <video controls width="100%" height="100%" class="media-element">
+                <source src="/assets/videos/feliz-ao-lado.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+        <div class="video-message">
+            <p>Sou tão feliz ao seu lado, aprendo tanto com você. Você é bênção de Deus na minha vida ❤️</p>
+        </div>
+        
+        <div class="video-container" style="margin-top: 30px;">
+            <!-- Vídeo 3 -->
+            <video controls width="100%" height="100%" class="media-element">
+                <source src="/assets/videos/1.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+        <div class="video-message">
+            <p>Cada momento juntos é especial, cada risada compartilhada é um tesouro ❤️</p>
+        </div>
+        
+        <div class="video-container" style="margin-top: 30px;">
+            <!-- Vídeo 4 -->
+            <video controls width="100%" height="100%" class="media-element">
+                <source src="/assets/videos/2.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+        <div class="video-message">
+            <p>Nossa história é escrita diariamente, com amor e carinho ❤️</p>
+        </div>
+        
+        <div class="video-container" style="margin-top: 30px;">
+            <!-- Vídeo 5 -->
+            <video controls width="100%" height="100%" class="media-element">
+                <source src="/assets/videos/especial.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+        <div class="video-message">
+            <p>Você é meu presente todos os dias, meu companheiro para a vida toda ❤️</p>
+        </div>
+    </section>
+
+    <section id="love-declaration" style="text-align: center;padding: 0;margin-top: 1rem;margin-bottom: 1rem;">
+        <h2 class="love-title" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Eu Te Amo</h2>
+        <p style="font-size: 1.5rem; color: var(--dark-color); font-style: italic; margin-bottom: 2rem;">Hoje, amanhã e sempre</p>
+    </section>
+
+    <!-- Seção de Personagens Especiais -->
+    <section id="special">
+        <h2 class="section-title">Nossos Personagens Especiais</h2>
+        <div class="special-characters">
+            <div class="character" id="derickCharacter" data-personality="derick">
+                <div class="character-message" id="derickMessage">Auu au! 🐕 Eu sou o Derick, o cachorrinho mais fiel e leal do mundo! Sou protetor, carinhoso, cheio de energia e sempre pronto pra brincar!</div>
+                <img src="/assets/images/caramelo.jpg" alt="Derick the dog">
+                <h3>Derick</h3>
+                <p>Nosso cachorrinho caramelo que simboliza lealdade e companheirismo.</p>
+            </div>
+            <div class="character" id="garyCharacter" data-personality="gary">
+                <div class="character-message" id="garyMessage">Meow! 🐌 Eu sou o Gary, tranquilo e paciente. Prefiro observar, vou devagar, mas sempre chego lá. Sou um bom ouvinte e adoro momentos calmos.</div>
+                <img src="/assets/images/gary.png" alt="Gary the snail">
+                <h3>Gary</h3>
+                <p>A lesma do Bob Esponja que representa paciência e carinho nos pequenos momentos.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; font-size: 1.2rem; font-weight: bold; color: var(--primary-color);">
+            <p>E a pergunta que não quer calar, você é o Derick ou o Gary?</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem; font-weight: normal;">(Toque em um deles para descobrir)</p>
+        </div>
+        
+        <!-- Resultado da seleção de personagem -->
+        <div class="character-selection" id="characterResult">
+            <h3>Sua personalidade é...</h3>
+            <p id="personalityResult"></p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>
+                Feito com 
+                <svg class="footer-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                por Lucy
+            </p>
+            <p>Daniel & Lucy - Para Sempre & Eternamente</p>
+        </div>
+    </footer>
+
+    <!-- Modal para Imagens da Galeria -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <img id="modalImage" src="" alt="Imagem em tamanho completo">
+        </div>
+    </div>
+
+    <script>
+        // Verificar se é um dispositivo com tela de toque
+        let isTouchDevice = false;
+        
+        function detectTouchDevice() {
+            isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+            document.body.className = isTouchDevice ? 'touch-device' : 'non-touch-device';
+        }
+        
+        detectTouchDevice();
+        
+        // Criar fundo de corações flutuantes
+        document.addEventListener('DOMContentLoaded', function() {
+            const smallHearts = document.querySelector('.small-hearts');
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('small-heart');
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.width = `${Math.random() * 20 + 10}px`;
+                heart.style.height = heart.style.width;
+                heart.style.animationDelay = `${Math.random() * 15}s`;
+                smallHearts.appendChild(heart);
+            }
+
+            // Player de música - com melhor suporte para autoplay
+            const musicToggle = document.getElementById('musicToggle');
+            const bgMusic = document.getElementById('bgMusic');
+            const playerIcon = document.getElementById('playerIcon');
+            const allVideos = document.querySelectorAll('video.media-element');
+            let isPlaying = false;
+
+            // Variável para acompanhar a mídia atualmente em reprodução
+            let currentlyPlaying = null;
+
+            // Função para pausar todas as mídias
+            function pauseAllMedia() {
+                // Pausar música de fundo
+                bgMusic.pause();
+                playerIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+                isPlaying = false;
+                
+                // Pausar todos os vídeos
+                allVideos.forEach(video => {
+                    video.pause();
+                });
+                
+                currentlyPlaying = null;
+            }
+
+            // Função para tentar tocar música
+            function playAudio() {
+                // Pausar qualquer vídeo que esteja tocando
+                allVideos.forEach(video => {
+                    video.pause();
+                });
+                
+                bgMusic.volume = 0.3;
+                const playPromise = bgMusic.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        isPlaying = true;
+                        playerIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+                        currentlyPlaying = bgMusic;
+                    }).catch(error => {
+                        isPlaying = false;
+                        console.log("Reprodução automática impedida: " + error);
+                    });
+                }
+            }
+            
+            // Tentar autoplay imediatamente (muitos navegadores bloqueiam)
+            // playAudio(); - Removido para evitar problemas com autoplay não autorizado
+            
+            // Botão de toggle de música
+            musicToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Se a música estiver tocando, pausamos
+                if (isPlaying) {
+                    pauseAllMedia();
+                } else {
+                    // Se qualquer vídeo estiver tocando, vamos pausá-lo primeiro
+                    pauseAllMedia();
+                    playAudio();
+                }
+            });
+            
+            // Adicionar evento de play a todos os vídeos
+            allVideos.forEach(video => {
+                video.addEventListener('play', function() {
+                    // Se outro elemento de mídia estiver tocando (incluindo outro vídeo)
+                    if (currentlyPlaying && currentlyPlaying !== this) {
+                        // Pausar a mídia atual
+                        if (currentlyPlaying === bgMusic) {
+                            bgMusic.pause();
+                            playerIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+                            isPlaying = false;
+                        } else {
+                            currentlyPlaying.pause();
+                        }
+                    }
+                    
+                    // Definir o vídeo atual como a mídia em reprodução
+                    currentlyPlaying = this;
+                });
+            });
+
+            // Contagem regressiva
+            function updateCountdown() {
+                const targetDate = new Date('May 6, 2025 00:00:00').getTime();
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+                
+                if (difference < 0) {
+                    // A data já chegou!
+                    document.getElementById('countdown').innerHTML = 'Parabéns pelos nossos 8 meses juntos! ❤️';
+                    document.getElementById('anniversary-celebration').style.display = 'block';
+                    
+                    // Criar confetes especiais de aniversário se ainda não foram criados
+                    if (!window.anniversaryAnimationPlayed) {
+                        createAnniversaryConfetti();
+                        window.anniversaryAnimationPlayed = true;
+                    }
+                    return;
+                }
+                
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                
+                // Atualizar diretamente os elementos
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            }
+            
+            // Iniciar contagem regressiva e atualizar a cada segundo
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Função para criar confetes de aniversário
+            function createAnniversaryConfetti() {
+                const colors = ['#ff3e6c', '#ff7a9c', '#ffb3c1', '#ffffff', '#ffd700', '#e91e63', '#f44336'];
+                
+                // Criar muito mais confetes para a celebração
+                for (let i = 0; i < 200; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.classList.add('confetti');
+                        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.left = `${Math.random() * 100}%`;
+                        confetti.style.width = `${Math.random() * 15 + 5}px`;
+                        confetti.style.height = `${Math.random() * 15 + 5}px`;
+                        confetti.style.opacity = Math.random();
+                        confetti.style.animationDuration = `${Math.random() * 5 + 3}s`;
+                        
+                        document.body.appendChild(confetti);
+                        
+                        setTimeout(() => {
+                            confetti.remove();
+                        }, 8000);
+                    }, i * 100); // Lançar confetes gradualmente
+                }
+                
+                // Criar corações especiais flutuando
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '❤️';
+                        heart.style.position = 'fixed';
+                        heart.style.fontSize = `${Math.random() * 25 + 15}px`;
+                        heart.style.left = `${Math.random() * 100}%`;
+                        heart.style.top = '100%';
+                        heart.style.opacity = Math.random() * 0.7 + 0.3;
+                        heart.style.zIndex = '9999';
+                        heart.style.pointerEvents = 'none';
+                        heart.style.transition = 'transform 7s ease-out, top 7s ease-out, opacity 7s ease-in-out';
+                        
+                        document.body.appendChild(heart);
+                        
+                        // Iniciar animação após um curto delay
+                        setTimeout(() => {
+                            heart.style.top = `-${Math.random() * 20 + 10}%`;
+                            heart.style.transform = `translateX(${Math.random() * 200 - 100}px) rotate(${Math.random() * 360}deg)`;
+                        }, 100);
+                        
+                        setTimeout(() => {
+                            heart.style.opacity = '0';
+                            setTimeout(() => heart.remove(), 1000);
+                        }, 6000);
+                    }, i * 300);
+                }
+            }
+
+            // Função para criar confetes da seleção de personagem
+            function createConfetti(character) {
+                const colors = ['#ff3e6c', '#ff7a9c', '#ffb3c1', '#ffffff', '#ffd700'];
+                
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.width = `${Math.random() * 10 + 5}px`;
+                    confetti.style.height = `${Math.random() * 10 + 5}px`;
+                    confetti.style.opacity = Math.random();
+                    confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // Remover o confetti após a animação
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }
+            }
+
+            // Botão de rolagem
+            document.getElementById('scrollDown').addEventListener('click', function() {
+                document.getElementById('celebration').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Modal da galeria - adaptado para dispositivos móveis
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
+
+            // Modificar comportamento de hover para mobile
+            if (isTouchDevice) {
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Se estiver apenas mostrando a legenda, não abrir o modal ainda
+                        if (!item.classList.contains('touch-active')) {
+                            // Primeiro remove a classe de todos os itens
+                            galleryItems.forEach(i => i.classList.remove('touch-active'));
+                            // Adiciona apenas ao item atual
+                            item.classList.add('touch-active');
+                            return;
+                        }
+                        
+                        // No segundo toque, abre o modal
+                        modal.style.display = 'flex';
+                        modalImg.src = this.getAttribute('data-img');
+                        modalImg.alt = this.getAttribute('data-caption');
+                    });
+                });
+                
+                // Clicar fora de um item da galeria remove o estado ativo
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.gallery-item')) {
+                        galleryItems.forEach(i => i.classList.remove('touch-active'));
+                    }
+                });
+            } else {
+                // Comportamento padrão para desktop
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        modal.style.display = 'flex';
+                        modalImg.src = this.getAttribute('data-img');
+                        modalImg.alt = this.getAttribute('data-caption');
+                    });
+                });
+            }
+
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Interação com Personagens - adaptado para dispositivos móveis
+            const derick = document.getElementById('derickCharacter');
+            const gary = document.getElementById('garyCharacter');
+            const derickMessage = document.getElementById('derickMessage');
+            const garyMessage = document.getElementById('garyMessage');
+            const characterResult = document.getElementById('characterResult');
+            const personalityResult = document.getElementById('personalityResult');
+            
+            // Função para mostrar o resultado da personalidade
+            function showPersonality(personality) {
+                if (personality === 'derick') {
+                    personalityResult.innerHTML = `
+                        <strong>Você é como o Derick!</strong>
+                        <p>Você é energético, leal e protetor. Gosta de aventuras e está sempre pronto para novas experiências! Você é espontâneo, carinhoso e valoriza a lealdade acima de tudo. Sua alegria contagia a todos ao seu redor, e você não tem medo de demonstrar seu amor.</p>
+                        <p>O Daniel adora essa sua energia e disposição para viver cada momento intensamente! ❤️</p>
+                    `;
+                } else {
+                    personalityResult.innerHTML = `
+                        <strong>Você é como o Gary!</strong>
+                        <p>Você é paciente, calmo e observador. Prefere pensar antes de agir e valoriza os momentos tranquilos. Você é atencioso, reflexivo e mantém a serenidade mesmo nos momentos difíceis. Sua presença constante e apoio silencioso são fontes de segurança.</p>
+                        <p>O Daniel adora essa sua capacidade de trazer paz e equilíbrio para os dois! ❤️</p>
+                    `;
+                }
+                
+                characterResult.classList.add('show');
+                createConfetti(personality);
+                
+                // Rolar suavemente até o resultado
+                setTimeout(() => {
+                    characterResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            }
+            
+            // Configurar interações diferentes baseadas no tipo de dispositivo
+            if (isTouchDevice) {
+                // Para dispositivos touch, mostrar a mensagem no primeiro toque e a personalidade no segundo
+                let derickTouched = false;
+                let garyTouched = false;
+                
+                derick.addEventListener('click', function() {
+                    if (!derickTouched) {
+                        // Primeiro toque: mostrar mensagem
+                        derickMessage.classList.add('show');
+                        garyMessage.classList.remove('show');
+                        derickTouched = true;
+                        garyTouched = false;
+                        setTimeout(() => {
+                            if (!derick.contains(document.activeElement)) {
+                                derickMessage.classList.remove('show');
+                                derickTouched = false;
+                            }
+                        }, 3000);
+                    } else {
+                        // Segundo toque: mostrar personalidade
+                        derickMessage.classList.remove('show');
+                        derick.classList.add('selected');
+                        gary.classList.remove('selected');
+                        showPersonality('derick');
+                        derickTouched = false;
+                    }
+                });
+                
+                gary.addEventListener('click', function() {
+                    if (!garyTouched) {
+                        // Primeiro toque: mostrar mensagem
+                        garyMessage.classList.add('show');
+                        derickMessage.classList.remove('show');
+                        garyTouched = true;
+                        derickTouched = false;
+                        setTimeout(() => {
+                            if (!gary.contains(document.activeElement)) {
+                                garyMessage.classList.remove('show');
+                                garyTouched = false;
+                            }
+                        }, 3000);
+                    } else {
+                        // Segundo toque: mostrar personalidade
+                        garyMessage.classList.remove('show');
+                        gary.classList.add('selected');
+                        derick.classList.remove('selected');
+                        showPersonality('gary');
+                        garyTouched = false;
+                    }
+                });
+                
+                // Clicar fora dos personagens esconde as mensagens
+                document.addEventListener('click', function(e) {
+                    if (!derick.contains(e.target) && !gary.contains(e.target)) {
+                        derickMessage.classList.remove('show');
+                        garyMessage.classList.remove('show');
+                        derickTouched = false;
+                        garyTouched = false;
+                    }
+                });
+                
+            } else {
+                // Comportamento para desktop: hover mostra mensagem, clique mostra personalidade
+                derick.addEventListener('mouseenter', function() {
+                    derickMessage.classList.add('show');
+                });
+                
+                derick.addEventListener('mouseleave', function() {
+                    derickMessage.classList.remove('show');
+                });
+                
+                gary.addEventListener('mouseenter', function() {
+                    garyMessage.classList.add('show');
+                });
+                
+                gary.addEventListener('mouseleave', function() {
+                    garyMessage.classList.remove('show');
+                });
+                
+                derick.addEventListener('click', function() {
+                    derick.classList.add('selected');
+                    gary.classList.remove('selected');
+                    showPersonality('derick');
+                });
+                
+                gary.addEventListener('click', function() {
+                    gary.classList.add('selected');
+                    derick.classList.remove('selected');
+                    showPersonality('gary');
+                });
+            }
+            
+            // Para testar a contagem regressiva e confetes, descomente a linha abaixo
+            // Isso simulará como se a data de aniversário já tivesse chegado
+            // document.getElementById('countdown').innerHTML = 'Parabéns pelos nossos 8 meses juntos! ❤️';
+            // document.getElementById('anniversary-celebration').style.display = 'block';
+            // createAnniversaryConfetti();
+        });
+    </script>
+</body>
+</html>
